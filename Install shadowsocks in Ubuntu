@@ -1,0 +1,22 @@
+$ sudo apt-get update
+$ sudo apt-get install python-pip
+$ sudo apt-get install python-setuptools m2crypto
+$ sudo apt-get install shadowsocks
+
+安装后需要对Shadowsocks进行配置，在/etc目录下新建shadowsocks.json文件，添加以下内容
+{
+"server": "your server ip",
+"server_port": 15216,
+"local_address": "127.0.0.1",
+"local_port": 1080,
+"password": "your password",
+"method": "aes-256-cfb",
+"fast_open": true,
+"workers": 1
+}
+
+启动shadowsocks
+~$ sslocal -c /etc/shadowsocks.json
+
+为了不每次启动都需手动输入一遍，设置为开机启动。在/etc/rc.local中添加如下命令，注意在exit 0之前。
+sudo sslocal -c /etc/shadowsocks.json
