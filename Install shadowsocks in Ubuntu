@@ -1,3 +1,4 @@
+方法一：
 $ sudo apt-get update
 $ sudo apt-get install python-pip
 $ sudo apt-get install python-setuptools m2crypto
@@ -20,3 +21,11 @@ $ sudo apt-get install shadowsocks
 
 为了不每次启动都需手动输入一遍，设置为开机启动。在/etc/rc.local中添加如下命令，注意在exit 0之前。
 sudo sslocal -c /etc/shadowsocks.json
+方法二：
+#安装shadowsocks-qt5 GUI
+
+$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+$ sudo apt-get update
+$ sudo apt-get install shadowsocks-qt5
+
+#Firefox浏览器 下载FoxyProxy插件 
