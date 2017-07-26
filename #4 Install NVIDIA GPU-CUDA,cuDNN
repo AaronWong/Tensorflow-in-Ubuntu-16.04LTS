@@ -1,0 +1,31 @@
+$ uname -m && cat /etc/*release
+
+【CUDA官方下载】https://developer.nvidia.com/cuda-downloads
+
+$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64.deb
+$ sudo apt update
+$ sudo apt install cuda
+
+
+NVIDIA cuDNN是用于深度神经网络的GPU加速库。
+  https://developer.nvidia.com/cudnn
+  $ tar -zxf cudnn-8.0-linux-x64-v5.1.tgz && cd cuda
+  $ sudo cp include/cudnn.h /usr/local/cuda-8.0/include/
+  $ sudo cp lib64/libcudnn* /usr/local/cuda-8.0/lib64
+  
+安装 libcupti-dev 包
+  $ sudo apt-get install libcupti-dev
+  
+变量设置
+#!/bin/sh
+# Author:Aaron
+# Date: 201707
+# Organization: https://github.com/whaleai
+
+export CUDA_HOME=/usr/local/cuda-8.0
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64
+
+
+来源：  http://blog.csdn.net/dream_an/article/details/74992346
