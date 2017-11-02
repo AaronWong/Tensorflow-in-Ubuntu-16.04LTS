@@ -1,0 +1,29 @@
+#7 Jupyter Notebook 服务器部署
+
+1. 生成配置文件
+$jupyter notebook --generate-config (--allow-root)
+Writing default config to: /home/root/.jupyter/jupyter_notebook_config.py
+
+2. 生成密码（后续写配置文件、登录Jupyter notebook需要）
+$ ipython
+In [1]: from notebook.auth import passwd
+In [2]: passwd()
+Enter password: 
+Verify password: 
+Out[2]: 'sha1:0e422dfccef2:84cfbcbb3ef95872fb8e23be3999c123f862d856' 
+
+3. 修改默认配置文件
+$vi ~/.jupyter/jupyter_notebook_config.py 
+
+c.NotebookApp.ip='*'
+c.NotebookApp.password = u'sha:ce...刚才复制的那个密文'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port =8888 #随便指定一个端口
+
+a 添加内容
+Esc 命令模式
+:wq 命令模式下，保存及退出
+
+4. 启动Jupter notebook
+$jupyter notebook
+
