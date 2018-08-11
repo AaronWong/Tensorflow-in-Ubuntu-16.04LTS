@@ -10,7 +10,7 @@ In [1]: from notebook.auth import passwd
 In [2]: passwd()
 Enter password: 
 Verify password: 
-Out[2]: 'sha1:0e422dfccef2:84cfbcbb3ef9fb8e23be3999c123f862d856' 
+Out[2]: 'sha1:0e422dfccef2:84cfbcXXXXX' 
 
 3. 修改默认配置文件
 $vi ~/.jupyter/jupyter_notebook_config.py 
