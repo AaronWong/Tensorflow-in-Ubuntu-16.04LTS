@@ -25,6 +25,11 @@ $ nohup /usr/local/frp/frps -c /usr/local/frp/frps.ini &
 [common]
 server_addr = 120.56.37.48   #公网服务器ip
 server_port = 7000            #与服务端bind_port一致
+vhost_http_port =80
+dashboard_port = dashboard_port_number
+dashboard_user = dashboard_user_name
+dashboard_pwd = dashboard_pwd_value
+privilege_token = privilege_token_value
  
 #公网通过ssh访问内部服务器
 [ssh]
