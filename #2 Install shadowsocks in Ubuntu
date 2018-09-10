@@ -5,6 +5,7 @@ $ sudo apt-get install python-setuptools m2crypto
 $ sudo apt-get install shadowsocks
 
 安装后需要对Shadowsocks进行配置，在/etc目录下新建shadowsocks.json文件，添加以下内容
+vi /etc/shadowsocks.json
 {
 "server": "your server ip",
 "server_port": 15216,
@@ -17,10 +18,12 @@ $ sudo apt-get install shadowsocks
 }
 
 启动shadowsocks
-~$ sslocal -c /etc/shadowsocks.json
+$ ssserver -c /etc/shadowsocks.json
+$ nohup ssserver -c /etc/shadowsocks.json &
 
 为了不每次启动都需手动输入一遍，设置为开机启动。在/etc/rc.local中添加如下命令，注意在exit 0之前。
-sudo sslocal -c /etc/shadowsocks.json
+nohup ssserver -c /etc/shadowsocks.json &
+
 方法二：
 #安装shadowsocks-qt5 GUI
 
