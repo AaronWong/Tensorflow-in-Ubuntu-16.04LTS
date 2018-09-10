@@ -11,6 +11,11 @@
 ```
 [common]
 bind_port = 7000           #与客户端绑定的进行通信的端口
+vhost_http_port =80
+dashboard_port = dashboard_port_number
+dashboard_user = dashboard_user_name
+dashboard_pwd = dashboard_pwd_value
+privilege_token = privilege_token_value
 ```
 
 ~~保存然后启动服务./frps -c ./frps.ini，这是前台启动，后台启动命令为nohup ./frps -c ./frps.ini &~~
@@ -25,11 +30,9 @@ $ nohup /usr/local/frp/frps -c /usr/local/frp/frps.ini &
 [common]
 server_addr = 120.56.37.48   #公网服务器ip
 server_port = 7000            #与服务端bind_port一致
-vhost_http_port =80
-dashboard_port = dashboard_port_number
-dashboard_user = dashboard_user_name
-dashboard_pwd = dashboard_pwd_value
 privilege_token = privilege_token_value
+login_fail_exit = false
+
  
 #公网通过ssh访问内部服务器
 [ssh]
