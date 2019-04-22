@@ -1,0 +1,11 @@
+#添加 exfat 工具
+$ sudo apt-get install exfat-utils
+
+#先用 fdisk 查看盘符
+$ sudo fdisk -l
+
+#挂载到文件夹
+$ sudo mount /dev/sda1 /mnt
+
+#卸载
+$ sudo umount /mnt
