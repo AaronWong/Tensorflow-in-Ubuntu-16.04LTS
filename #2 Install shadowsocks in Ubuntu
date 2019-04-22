@@ -32,3 +32,9 @@ $ sudo apt-get update
 $ sudo apt-get install shadowsocks-qt5
 
 #Firefox浏览器 下载FoxyProxy插件 
+
+#Ubuntu18.04 安装ss-qt5 缺少依赖文件
+cd /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
+sudo vim hzwhuang-ubuntu-ss-qt5-bionic.list
+#（ bionic 是18.04版本代号， xenial 是16.04的版本代号）
+deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main
