@@ -38,3 +38,22 @@ $ cd /etc/apt/sources.list.d
 $ sudo vi hzwhuang-ubuntu-ss-qt5-bionic.list
 #（ bionic 是18.04版本代号， xenial 是16.04的版本代号）
 $ deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main
+
+$ apt update
+$ apt install -y git python3-pip
+$ pip3 install git+https://github.com/shadowsocks/shadowsocks.git@master
+$ vi /etc/shadowsocks.json
+{
+    "server": "0.0.0.0",
+    "port_password": {
+        "2222": "",
+        "2223": "",
+        "2224": "",
+        "2225": "",
+        "2226": "",
+        "2227": ""
+    },
+    "timeout": 300,
+    "method": "aes-256-cfb"
+}
+
